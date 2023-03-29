@@ -32,7 +32,7 @@ const WorkComponent = ({ isAnimated }: PropTypes): JSX.Element => {
                             delay: index * 0.3,
                             ease: [0, 0.71, 0.2, 1.01]
                         }}
-                        key={item.title}
+                        key={item.dateRange}
                     >
                         <WorkItem item={item} />
                     </motion.div>

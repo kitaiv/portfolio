@@ -13,7 +13,15 @@ const WorkItem = ({ item }: PropTypes) => {
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
         >
-            <Card size='sm' borderColor='gray.400' variant='outline' background='transparent' color='gray.200' cursor='pointer' pe='10rem'>
+            <Card 
+                size='sm' 
+                borderColor='gray.400' 
+                variant='outline' 
+                background='transparent' 
+                color='gray.200' 
+                cursor='pointer' 
+                pe='10rem'
+            >
                 <CardHeader>
                     <Heading size='md'>{item.company}</Heading>
                 </CardHeader>

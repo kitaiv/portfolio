@@ -13,7 +13,8 @@ import {
     UnorderedList,
     ListItem,
     Divider,
-    useBreakpoint
+    useBreakpoint,
+    Highlight
 } from '@chakra-ui/react'
 import { UseDisclosureReturn } from '@chakra-ui/hooks';
 
@@ -40,7 +41,16 @@ const Modal = ({ item, isOpen, onClose}: PropTypes) => {
             <ModalContent>  
                 <ModalHeader>
                     <Heading size='md' my='1'>{item.company}</Heading>
-                    <Heading size="xs" my='1'>{item.dateRange}</Heading>
+                    <Heading size='xs' my='1'>{item.dateRange}</Heading>
+                    <Heading size='xs' mt='4' lineHeight='tall'>
+                        {/* <Text display='inline' fontWeight='400' color='gray.300'>Position: </Text>  */}
+                        <Highlight
+                            query={item.title}
+                            styles={{ px: '2', py: '1', rounded: 'full', bg: 'red.100' }}
+                        >
+                            {item.title}
+                        </Highlight>
+                    </Heading>
                 </ModalHeader>
                 {breakpoint === 'base' && 'sm' ? null : <ModalCloseButton />}
                 <ModalBody>

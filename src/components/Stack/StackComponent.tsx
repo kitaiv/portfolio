@@ -10,8 +10,7 @@ type PropsType = {
     isAnimated: boolean
 }
 
-const StackComponent = ({isAnimated}: PropsType) => {
-
+const StackComponent = ({ isAnimated }: PropsType) => {
 
     const firstRow = stackData.stackList.slice(0, 5);
     const secondRow = stackData.stackList.slice(5, 9);
@@ -23,11 +22,14 @@ const StackComponent = ({isAnimated}: PropsType) => {
             <Flex justify={'space-evenly'}>
                 {firstRow && firstRow.map((item: StackListItem) => (
                     <Center key={item.tooltip}>
-                            <Animate animationData={animate(item, isAnimated).stackAnimation}>
-                                <Tooltip label={item.tooltip} closeOnClick={false}>
-                                    <Image src={item.icon} key={item.tooltip} w="100px" h="100px" />
-                                </Tooltip>
-                            </Animate>
+                        <Animate animationData={animate(item, isAnimated).stackAnimation}>
+                            <Tooltip
+                                label={item.tooltip}
+                                closeOnClick={false}
+                            >
+                                <Image src={item.icon} key={item.tooltip} w="100px" h="100px" />
+                            </Tooltip>
+                        </Animate>
                     </Center>
                 ))}
             </Flex>
@@ -35,22 +37,28 @@ const StackComponent = ({isAnimated}: PropsType) => {
             <Flex justify={'space-evenly'}>
                 {secondRow && secondRow.map((item: StackListItem) => (
                     <Center key={item.tooltip}>
-                            <Animate animationData={animate(item, isAnimated).stackAnimation}>
-                                <Tooltip label={item.tooltip} closeOnClick={false}>
-                                    <Image src={item.icon} key={item.tooltip} w="100px" h="100px" />
-                                </Tooltip>
-                            </Animate>
+                        <Animate animationData={animate(item, isAnimated).stackAnimation}>
+                            <Tooltip
+                                label={item.tooltip}
+                                closeOnClick={false}
+                            >
+                                <Image src={item.icon} key={item.tooltip} w="100px" h="100px" />
+                            </Tooltip>
+                        </Animate>
                     </Center>
                 ))}
             </Flex>
             <Spacer />
             <Flex justify='center'>
                 <Center w='100px' h='100px'>
-                        <Animate animationData={animate(thirdRow, isAnimated).stackAnimation} >
-                            <Tooltip label={thirdRow.tooltip} closeOnClick={false}>
+                    <Animate animationData={animate(thirdRow, isAnimated).stackAnimation} >
+                        <Tooltip
+                            label={thirdRow.tooltip}
+                            closeOnClick={false}
+                        >
                             <Image src={thirdRow.icon} key={thirdRow.tooltip} w="100%" h="100%" />
-                            </Tooltip>
-                        </Animate>
+                        </Tooltip>
+                    </Animate>
                 </Center>
             </Flex>
         </Flex>
