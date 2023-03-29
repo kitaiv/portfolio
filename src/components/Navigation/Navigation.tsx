@@ -49,7 +49,7 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
 
     return (
         <Box>
-            <Center pt="5" pb="1">
+            <Center pt="5" pb="5rem">
                 {/* @ts-ignore */}
                 <Box
                     display='flex'

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Box, Flex, Text, Image, Button, useBreakpoint } from '@chakra-ui/react'
+import { Box, Flex, Text, Image, Button, useBreakpoint, Center } from '@chakra-ui/react'
 import { PicOfMe } from '../../assets/img'
 import { homeData } from '../../data'
 import { useAnimation, motion } from "framer-motion";
@@ -62,9 +62,9 @@ const HomeComponent = ({ isAnimated }: PropsType) => {
         // @ts-ignore
         <Flex direction={breakpoint === 'base' && 'sm' ? 'column' : 'row'} gap={10} >
             <Box>
-                {/* <Center> */}
-                <Image src={PicOfMe} alt="pic of me" />
-                {/* </Center> */}
+                <Center>
+                    <Image src={PicOfMe} alt="pic of me" w={breakpoint === 'base' && 'sm' ? '300px' : 'auto'}/>
+                </Center>
             </Box>
             <Box w='100%'>
                 <Text fontSize="sm" color="gray.50" mb="2" aria-label={homeData.smallText} align={breakpoint === 'base' && 'sm' ? 'center' : 'start'}>
