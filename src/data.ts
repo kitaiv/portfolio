@@ -27,7 +27,8 @@ import type {
   WorkExperience,
   Socials,
   AnimationDataItemType,
-  AnimationDataType
+  AnimationDataType,
+  Projects
 } from './types';
 
 const navData: Navigation = {
@@ -191,12 +192,14 @@ const workData: WorkExperience = {
   to: '/work-experience',
   workList: [
     {
+      tag: 'work-experience',
       title: 'Front-end ReactJS Developer',
       company: 'DEV SIT',
       dateRange: '12/2021 - Present',
       jobSummary: {
         summaryText:
-          'As a Front-end Developer at DEV SIT, I was responsible for building Chrome extensions, landing pages, PWA web apps. My technical skills in front-end development, including HTML, CSS, ReactJS, JavaScript, Redux, Redux-toolkit, git, npm, AJAX, and Bootstrap, were instrumental in creating visually appealing and responsive web apps that met the needs of our clients. My problem-solving skills and strong communication skills ensured that project requirements were met and exceeded expectations, making me a valuable team member.',
+          'As a Front-end Developer at DEV SIT, I was responsible for building Chrome extensions, landing pages, PWA web apps. My technical skills in front-end development, including HTML, CSS, React, JavaScript, Redux, Redux-Toolkit, git, npm, Ajax, and Bootstrap, were instrumental in creating visually appealing and responsive web apps that met the needs of our clients. My problem-solving skills and strong communication skills ensured that project requirements were met and exceeded expectations, making me a valuable team member.',
+        keywords: ['HTML', 'CSS', 'React', 'JavaScript', 'Redux', 'Redux-Toolkit', 'git', 'npm', 'Ajax', 'Bootstrap'],
         keyResponsibilities: {
           title: 'Key Responsibilities:',
           responsibilitiesList: [
@@ -222,12 +225,14 @@ const workData: WorkExperience = {
       }
     },
     {
+      tag: 'work-experience',
       title: 'Front End Developer',
       company: 'CB',
       dateRange: '12/2020 - 10/2021',
       jobSummary: {
         summaryText:
-          'As a Front-end Developer at CB, I was responsible for building a web app that aimed to be a constructor for building a Telegram, WhatsApp, and other bots. My technical skills in front-end development, including ReactJS, Redux, Reduxtoolkit, git, npm, and AJAX, were instrumental in creating a user-friendly web app that met the needs of our clients. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+          'As a Front-end Developer at CB, I was responsible for building a web app that aimed to be a constructor for building a Telegram, WhatsApp, and other bots. My technical skills in front-end development, including ReactJS, Redux, Redux-Toolkit, git, npm, and Ajax, were instrumental in creating a user-friendly web app that met the needs of our clients. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+        keywords: ['Redux-Toolkit', 'git', 'npm', 'Ajax'],
         keyResponsibilities: {
           title: 'Key Responsibilities:',
           responsibilitiesList: [
@@ -254,12 +259,14 @@ const workData: WorkExperience = {
       }
     },
     {
+      tag: 'work-experience',
       title: 'Front-end ReactJS Developer',
       company: 'Autoparts | Start-up ',
       dateRange: '09/2020 - 10/2020',
       jobSummary: {
         summaryText:
-          'As a Front-end ReactJS Developer at Autoparts, I was responsible for building and maintaining an online store that sells different parts for automobiles. My technical skills in front-end dev elopment, including ReactJS, JavaScript, Redux, Redux-toolkit, git, npm, and MaterialUI, were instrumental in creating a user-friendly online store that met the needs of our customers. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+          'As a Front-End React Developer at Autoparts, I was responsible for building and maintaining an online store that sells different parts for automobiles. My technical skills in front-end dev elopment, including React, JavaScript, Redux, Redux-Toolkit, git, npm, and MaterialUI, were instrumental in creating a user-friendly online store that met the needs of our customers. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+          keywords: ['React', 'JavaScript', 'Redux', 'Redux-Toolkit', 'git', 'npm', 'MaterialUI'],
         keyResponsibilities: {
           title: 'Key Responsibilities:',
           responsibilitiesList: [
@@ -286,12 +293,14 @@ const workData: WorkExperience = {
       }
     },
     {
+      tag: 'work-experience',
       title: 'ReactJS Engineer',
       company: 'Astomi',
       dateRange: '01/2020 - 03/2020',
       jobSummary: {
         summaryText:
-          'As a ReactJS Engineer at Astomi, I was responsible for developing and maintaining an online store using ReactJS, Redux, Redux-toolkit, git, and npm. My technical skills in front-end development were crucial in building a user-friendly online store that met the needs of our customers. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+          'As a ReactJS Engineer at Astomi, I was responsible for developing and maintaining an online store using React, Redux, Redux-toolkit, git, and npm. My technical skills in front-end development were crucial in building a user-friendly online store that met the needs of our customers. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+        keywords: ['React', 'git', 'npm'],
         keyResponsibilities: {
           title: 'Key Responsibilities:',
           responsibilitiesList: [
@@ -320,6 +329,40 @@ const workData: WorkExperience = {
   ]
 };
 
+const projectsData: Projects = {
+  to: '/projects',
+  projectsList: [
+    {
+      id: 0,
+      tag: 'projects',
+      title: 'GameReqs',
+      description: "Gamereqs is a web application built using React and styled using Material UI. The app provides a platform for gamers to search and discover new games based on their preferences. The search functionality allows users to filter games by genre, platform, release date, and rating. Gamereqs also features a recommendation system that generates personalized game suggestions based on the user's previous searches and preferences.",
+      keywords: ['React', 'Material UI'],
+      githubLink: 'https://github.com/kitaiv/gamereqs',
+      viewLink: 'https://gamereqs-ojuqjlg6o-kitaiv.vercel.app/'
+    },
+    {
+      id: 1,
+      tag: 'projects',
+      title: 'Todo App',
+      description: "To-do app is a simple and efficient web application built using React and TypeScript. The user interface is designed using React Bootstrap, making it intuitive and user-friendly. With this app, users can easily create and manage their to-do lists, set deadlines, and mark tasks as completed.",
+      keywords: ['React', 'TypeScript', 'React Bootstrap'],
+      githubLink: 'https://github.com/kitaiv/todo-app',
+      viewLink: 'https://todo-5yz5z730q-kitaiv.vercel.app/'
+    },
+    {
+      id: 2,
+      tag: 'projects',
+      title: 'Volume Deck',
+      description: "Volume Deck is a Chrome extension built using React, TypeScript, and Webpack. The extension provides users with a customizable volume control interface that can be accessed from anywhere on the web. The interface includes a slider that allows users to adjust the volume of their device, as well as individual volume controls for specific tabs or applications. volumedeck is designed to be user-friendly and intuitive, with a simple and modern interface. With volumedeck, users can easily manage their device's volume without having to switch between tabs or applications.",
+      keywords: ['React', 'TypeScript', 'Webpack'],
+      githubLink: 'https://github.com/kitaiv/volumedeck',
+      viewLink: undefined
+    }
+    
+  ]
+}
+
 const socialsData: Socials = {
   socialsList: [
     {
@@ -345,4 +388,4 @@ const socialsData: Socials = {
   ]
 };
 
-export { homeData, stackData, workData, navData, socialsData, animate };
+export { homeData, stackData, workData, navData, socialsData, animate, projectsData };

@@ -1,81 +1,119 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Box, Container, Text, useBreakpoint, Flex} from '@chakra-ui/react'
 import {
-  Route,
-  Switch
-} from 'react-router-dom';
+  Box,
+  Container,
+  Text,
+  useBreakpoint,
+  Flex,
+  useDisclosure
+} from '@chakra-ui/react';
+import { Route, Switch } from 'react-router-dom';
 
-import { Home, Stack, Work} from './pages'
+import { Home, Stack, Work, Projects } from './pages';
 import Navigation from './components/Navigation/Navigation';
 import Socials from './components/UI/Socials';
+import Modal from './components/UI/Modal';
+import { ProjectItem, WorkExperienceItem } from './types';
+import Context from './Context';
 
 
 function App() {
+  const [selectedItem, setSelectedItem] = useState<
+    WorkExperienceItem | ProjectItem | null
+  >(null);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const [animationPlayed, setAnimationPlayed] = useState({
     homeAnimation: false,
     stackAnimation: false,
-    workAnimation: false
+    workAnimation: false,
+    projectsAnimation: false
   });
 
   const [animateTab, setAnimateTab] = useState({
-    initialX: {x: '0%'},
-    animateX: {x: '0%'},
+    initialX: { x: '0%' },
+    animateX: { x: '0%' },
     to: '/'
-  })
+  });
 
-  const breakpoints = useBreakpoint()
-  
-  const noAnimation = {initialX: {}, animateX: {}} 
+  const store = {
+    selectedItem,
+    setSelectedItem, 
+    onOpen,
+    isOpen,
+    onClose,
+    animationPlayed,
+    setAnimationPlayed
+  }
+
+  const breakpoints = useBreakpoint();
+
+  const noAnimation = { initialX: {}, animateX: {} };
 
   React.useEffect(() => {
     //some code here
-    
   }, [animateTab]);
 
   return (
-    <Box>
-      {breakpoints !== 'base' && 'sm' ? <Socials /> : null}
-      {/* @ts-ignore-uniontype */}
-      <Container 
-        display="flex" 
-        flexDirection={breakpoints === 'base' && 'sm' ? 'column-reverse' : 'column'} justifyContent='space-between' 
-        alignItems={'center'} 
-        maxW='2xl' 
-        w='100%' 
-        h='100vh'
-      >
-        <Navigation setAnimateTab={setAnimateTab} />
-        <Flex h='100%' align={'center'}>
-          <Switch>
-            <Route exact path="/">
-              <Home 
-                isAnimated={animationPlayed.homeAnimation} 
-                setAnimationPlayed={setAnimationPlayed} 
-                animateTab={animateTab.to === '/' ? animateTab : noAnimation}
-              />
-            </Route>
-            <Route path="/stack">
-              <Stack 
-                isAnimated={animationPlayed.stackAnimation} 
-                setAnimationPlayed={setAnimationPlayed} 
-                animateTab={animateTab.to === '/stack' ? animateTab : noAnimation} 
-              />
-            </Route>
-            <Route path='/work'>
-              <Work 
-                isAnimated={animationPlayed.workAnimation} 
-                setAnimationPlayed={setAnimationPlayed} 
-                animateTab={animateTab.to === '/work' ? animateTab : noAnimation} 
-              />
-            </Route>
-            <Route path="*">
-              <Text color="gray.100">Page Not Found Or in Progress...</Text>
-            </Route>
-          </Switch>
-        </Flex>
-      </Container>
-    </Box>
+    // @ts-ignore
+    <Context.Provider value={store}>
+      <Box>
+        {breakpoints !== 'base' && 'sm' ? <Socials /> : null}
+        {/* @ts-ignore-uniontype */}
+        <Container
+          display="flex"
+          flexDirection={
+            breakpoints === 'base' && 'sm' ? 'column-reverse' : 'column'
+          }
+          justifyContent="space-between"
+          alignItems={'center'}
+          maxW="2xl"
+          w="100%"
+          h="100vh"
+        > 
+          <Box display={breakpoints === 'base' && 'sm' ? 'fixed' : 'block'} bottom={breakpoints === 'base' && 'sm' ? '0' : ''} left={breakpoints === 'base' && 'sm' ? '0' : ''}>
+            <Navigation setAnimateTab={setAnimateTab} />
+          </Box>
+          <Flex h="100%" align={'center'}>
+            <Switch>
+              <Route exact path="/">
+                <Home
+                  animateTab={animateTab.to === '/' ? animateTab : noAnimation}
+                />
+              </Route>
+              <Route path="/stack">
+                <Stack
+                  animateTab={
+                    animateTab.to === '/stack' ? animateTab : noAnimation
+                  }
+                />
+              </Route>
+              <Route path="/work">
+                <Work
+                  animateTab={
+                    animateTab.to === '/work' ? animateTab : noAnimation
+                  }
+                />
+              </Route>
+              <Route path="/projects">
+                <Projects
+                  animateTab={
+                    animateTab.to === '/projects' ? animateTab : noAnimation
+                  }
+                />
+              </Route>
+              <Route path="*">
+                <Text color="gray.100">Page Not Found Or in Progress...</Text>
+              </Route>
+            </Switch>
+          </Flex>
+        </Container>
+        {selectedItem && (
+          <Modal />
+        )}
+      </Box>
+    </Context.Provider>
   );
 }
 

@@ -1,20 +1,27 @@
-import React from 'react'
+import React, {useContext, useCallback} from 'react'
 import StackComponent from '../components/Stack/StackComponent'
-import { AnimationStates, AnimationTab } from '../types'
+import { AnimationTab } from '../types'
 import { motion } from 'framer-motion'
+import Context from '../Context'
 
 type PropTypes = {
-    isAnimated: boolean,
-    setAnimationPlayed: React.Dispatch<React.SetStateAction<AnimationStates>>,
     animateTab: AnimationTab
 }
-const Stack = ({isAnimated, setAnimationPlayed, animateTab}: PropTypes) => {
+const Stack = ({animateTab}: PropTypes) => {
+
+    const context = useContext(Context)
+    // @ts-ignore
+    const {animationPlayed, setAnimationPlayed} = context
 
     const {initialX, animateX} = animateTab
 
-    React.useEffect(() => {
-        return () => setAnimationPlayed((prevState) => ({ ...prevState, stackAnimation: true }))
+    const cacheAnimation = useCallback(() => {
+        setAnimationPlayed((prevState: any) => ({ ...prevState, stackAnimation: true }))
     }, [setAnimationPlayed])
+
+    React.useEffect(() => {
+        return () => cacheAnimation()
+    }, [cacheAnimation])
 
 
     //location.pathname === animateTab.activeTab ? 
@@ -24,7 +31,7 @@ const Stack = ({isAnimated, setAnimationPlayed, animateTab}: PropTypes) => {
             initial={initialX}
             animate={animateX}
         >
-            <StackComponent isAnimated={isAnimated}/>
+            <StackComponent isAnimated={animationPlayed.stackAnimation}/>
         </motion.div>
     )
 }

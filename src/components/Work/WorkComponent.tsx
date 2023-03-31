@@ -1,22 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import WorkItem from './WorkItem'
 import { workData } from '../../data'
-import { Stack, useDisclosure } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import Modal from '../UI/Modal'
 import { WorkExperienceItem } from '../../types'
+import Context from '../../Context'
 
 type PropTypes = {
     isAnimated: boolean
 }
 
 const WorkComponent = ({ isAnimated }: PropTypes): JSX.Element => {
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    const [selectedItem, setSelectedItem] = React.useState<WorkExperienceItem | null>(null);
+    const context = useContext(Context)
+    
+    // @ts-ignore
+    const {setSelectedItem, onOpen} = context
 
     const handleItemClick = (item: WorkExperienceItem) => {
         setSelectedItem(item);
-        onOpen();
+        onOpen();        
     };
 
     return (
@@ -24,6 +26,7 @@ const WorkComponent = ({ isAnimated }: PropTypes): JSX.Element => {
             {
                 workData && workData.workList.map((item, index) => (
                     <motion.div
+                        style={{filter: 'drop-shadow(7px 7px 7px rgba(0, 0, 0, 0.25))'}}
                         onClick={() => handleItemClick(item)}
                         initial={isAnimated ? {} : { opacity: 0, scale: 0.4 }}
                         animate={isAnimated ? {} : { opacity: 1, scale: 1 }}
@@ -38,8 +41,6 @@ const WorkComponent = ({ isAnimated }: PropTypes): JSX.Element => {
                     </motion.div>
                 ))
             }
-
-            {selectedItem && <Modal isOpen={isOpen} onClose={onClose} item={selectedItem} />}
         </Stack>
     )
 }

@@ -29,11 +29,13 @@ type Stack = {
 };
 
 type WorkExperienceItem = {
+  tag: string;
   title: string;
   company: string;
   dateRange: string;
   jobSummary: {
     summaryText: string;
+    keywords: Array<string>;
     keyResponsibilities: {
       title: string;
       responsibilitiesList: Array<string>;
@@ -51,6 +53,21 @@ type WorkExperience = {
   workList: Array<WorkExperienceItem>;
 };
 
+type ProjectItem = {
+  id: number;
+  tag: string;
+  title: string;
+  description: string;
+  githubLink: string;
+  viewLink?: string;
+  keywords: Array<string>
+}
+
+type Projects = {
+  to: string;
+  projectsList: Array<ProjectItem>;
+}
+
 type SocialItem = {
   icon: string;
   link: string;
@@ -64,7 +81,8 @@ type Socials = {
 type AnimationStates = {
   homeAnimation: boolean,
   stackAnimation: boolean,
-  workAnimation: boolean
+  workAnimation: boolean,
+  projectsAnimation: boolean
 }
 // initial, animate, transition, tag
 interface AnimationInitialAndAnimateType {
@@ -126,5 +144,7 @@ export type {
   AnimationStates,
   AnimationDataType,
   AnimationDataItemType,
-  AnimationTab
+  AnimationTab,
+  Projects,
+  ProjectItem
 };

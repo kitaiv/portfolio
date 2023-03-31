@@ -15,9 +15,8 @@ const WorkItem = ({ item }: PropTypes) => {
         >
             <Card 
                 size='sm' 
-                borderColor='gray.400' 
-                variant='outline' 
-                background='transparent' 
+                variant='elevated' 
+                background='gray.700' 
                 color='gray.200' 
                 cursor='pointer' 
                 pe='10rem'

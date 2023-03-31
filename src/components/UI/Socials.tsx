@@ -8,7 +8,7 @@ const Socials = () => {
     return (
         <Box
             position="fixed"
-            bg='gray.100'
+            bg='gray.300'
             left="0"
             top="50%"
             py={'1rem'}

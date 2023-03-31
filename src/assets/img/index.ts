@@ -19,7 +19,15 @@ import TelegramIcon from './telegram-square.svg';
 import TwitterIcon from './twitter-square.svg';
 import GitHubIcon from './github-square.svg';
 import LinkedInIcon from './linkedin-square.svg';
-import WavingHandIcon from './waving-hand.svg'
+import WavingHandIcon from './waving-hand.svg';
+// import GameReqsBg from './gamereqs_bg.png'
+import GameReqsBg from './gamereqs.png';
+import TodoAppBg from './todo-app.png';
+import VolumeDeckBg from './volumedeck.png';
+import ThunderIcon from './thunder-icon.svg'
+import GithubSmallIcon from './github-icon.svg'
+import ProductionIcon from './prod-icon.svg'
+import ProjectBg from './project-bg.png'
 
 export {
   BootstrapIcon,
@@ -43,5 +51,12 @@ export {
   TwitterIcon,
   GitHubIcon,
   LinkedInIcon,
-  WavingHandIcon
+  WavingHandIcon,
+  GameReqsBg,
+  TodoAppBg,
+  VolumeDeckBg,
+  ThunderIcon,
+  GithubSmallIcon,
+  ProductionIcon,
+  ProjectBg
 };

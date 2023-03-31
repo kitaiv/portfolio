@@ -1,21 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import HomeComponent from '../components/Home/HomeComponent';
-import { AnimationStates, AnimationTab } from '../types';
+import { AnimationTab } from '../types';
 import { motion } from 'framer-motion';
+import Context from '../Context';
 
 type PropTypes = {
-    isAnimated: boolean,
-    setAnimationPlayed: React.Dispatch<React.SetStateAction<AnimationStates>>
+    // isAnimated: boolean,
+    // setAnimationPlayed: React.Dispatch<React.SetStateAction<AnimationStates>>
     animateTab: AnimationTab
 }
 
-const Home = ({ isAnimated, setAnimationPlayed, animateTab }: PropTypes) => {
+const Home = ({ animateTab }: PropTypes) => {
+
+    const context = useContext(Context)
+    // @ts-ignore
+    const {animationPlayed, setAnimationPlayed} = context
 
     const { initialX, animateX } = animateTab
 
-    useEffect(() => {
-        return () => setAnimationPlayed((prevState) => ({ ...prevState, homeAnimation: true }))
+    const cacheAnimation = useCallback(() => {
+        setAnimationPlayed((prevState: any) => ({ ...prevState, homeAnimation: true }))
     }, [setAnimationPlayed])
+
+    useEffect(() => {
+        return () => cacheAnimation()
+    }, [cacheAnimation])
 
     return (
         <motion.div
@@ -23,7 +32,7 @@ const Home = ({ isAnimated, setAnimationPlayed, animateTab }: PropTypes) => {
             initial={initialX}
             animate={animateX}
         >
-            <HomeComponent isAnimated={isAnimated} />
+            <HomeComponent isAnimated={animationPlayed.homeAnimation} />
         </motion.div>
     )
 }

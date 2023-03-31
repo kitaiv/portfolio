@@ -29,7 +29,7 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
         if(activeTab > id) {
             setActiveTab(id)
             return setAnimateTab({
-                initialX: {x: '150%'},
+                initialX: {x: '110%'},
                 animateX: {x: '0%'},
                 to
                 
@@ -39,7 +39,7 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
         if(activeTab < id) {
             setActiveTab(id)
             return setAnimateTab({
-                initialX: {x: '-150%'},
+                initialX: {x: '-110%'},
                 animateX: {x: '0%'},
                 to
             })
@@ -49,7 +49,7 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
 
     return (
         <Box>
-            <Center pt="5" pb={breakpoint === 'base' && 'sm' ? '5rem' : '0'}>
+            <Center pt="5">
                 {/* @ts-ignore */}
                 <Box
                     display='flex'
@@ -79,7 +79,7 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
                                 >
                                     <Tooltip hasArrow label={item.tooltip} bg='grey.50'>
                                         <Button
-                                            background={checkLocation(item) ? '#FFD500' : '#F7FAFC'} 
+                                            background={checkLocation(item) ? '#FFD500' : 'gray.500'} 
                                             py='2rem'
                                             _hover={checkLocation(item) ? {} : { transform: 'scale(0.8)' }}
                                         >
