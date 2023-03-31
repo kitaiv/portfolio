@@ -39,7 +39,7 @@ function App() {
 
   const store = {
     selectedItem,
-    setSelectedItem, 
+    setSelectedItem,
     onOpen,
     isOpen,
     onClose,
@@ -71,10 +71,8 @@ function App() {
           maxW="2xl"
           w="100%"
           h="100vh"
-        > 
-          <Box display={breakpoints === 'base' && 'sm' ? 'fixed' : 'block'} bottom={breakpoints === 'base' && 'sm' ? '0' : ''} left={breakpoints === 'base' && 'sm' ? '0' : ''}>
-            <Navigation setAnimateTab={setAnimateTab} />
-          </Box>
+        >
+          <Navigation setAnimateTab={setAnimateTab} />
           <Flex h="100%" align={'center'}>
             <Switch>
               <Route exact path="/">
