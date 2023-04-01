@@ -198,8 +198,8 @@ const workData: WorkExperience = {
       dateRange: '12/2021 - Present',
       jobSummary: {
         summaryText:
-          'As a Front-end Developer at DEV SIT, I was responsible for building Chrome extensions, landing pages, PWA web apps. My technical skills in front-end development, including HTML, CSS, React, JavaScript, Redux, Redux-Toolkit, git, npm, Ajax, and Bootstrap, were instrumental in creating visually appealing and responsive web apps that met the needs of our clients. My problem-solving skills and strong communication skills ensured that project requirements were met and exceeded expectations, making me a valuable team member.',
-        keywords: ['HTML', 'CSS', 'React', 'JavaScript', 'Redux', 'Redux-Toolkit', 'git', 'npm', 'Ajax', 'Bootstrap'],
+          'As a Frontend Developer at DEV SIT, I was responsible for building Chrome extensions, landing pages, PWA web apps. My technical skills in front-end development, including HTML, CSS, React, JavaScript, Redux/Redux-Toolkit, git, npm, Ajax, and Bootstrap, were instrumental in creating visually appealing and responsive web apps that met the needs of our clients. My problem-solving skills and strong communication skills ensured that project requirements were met and exceeded expectations, making me a valuable team member.',
+        keywords: ['HTML', 'CSS', 'React', 'JavaScript', 'Redux/Redux-Toolkit', 'git', 'npm', 'Ajax', 'Bootstrap'],
         keyResponsibilities: {
           title: 'Key Responsibilities:',
           responsibilitiesList: [
@@ -231,8 +231,8 @@ const workData: WorkExperience = {
       dateRange: '12/2020 - 10/2021',
       jobSummary: {
         summaryText:
-          'As a Front-end Developer at CB, I was responsible for building a web app that aimed to be a constructor for building a Telegram, WhatsApp, and other bots. My technical skills in front-end development, including ReactJS, Redux, Redux-Toolkit, git, npm, and Ajax, were instrumental in creating a user-friendly web app that met the needs of our clients. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
-        keywords: ['Redux-Toolkit', 'git', 'npm', 'Ajax'],
+          'As a Frontend Developer at CB, I was responsible for building a web app that aimed to be a constructor for building a Telegram, WhatsApp, and other bots. My technical skills in front-end development, including React, Redux/Redux-Toolkit, git, npm, and Ajax, were instrumental in creating a user-friendly web app that met the needs of our clients. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+        keywords: ['React', 'Redux/Redux-Toolkit', 'git', 'npm', 'Ajax'],
         keyResponsibilities: {
           title: 'Key Responsibilities:',
           responsibilitiesList: [
@@ -265,8 +265,8 @@ const workData: WorkExperience = {
       dateRange: '09/2020 - 10/2020',
       jobSummary: {
         summaryText:
-          'As a Front-End React Developer at Autoparts, I was responsible for building and maintaining an online store that sells different parts for automobiles. My technical skills in front-end dev elopment, including React, JavaScript, Redux, Redux-Toolkit, git, npm, and MaterialUI, were instrumental in creating a user-friendly online store that met the needs of our customers. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
-          keywords: ['React', 'JavaScript', 'Redux', 'Redux-Toolkit', 'git', 'npm', 'MaterialUI'],
+          'As a Frontend Developer at Autoparts, I was responsible for building and maintaining an online store that sells different parts for automobiles. My technical skills in front-end dev elopment, including React, JavaScript, Redux/Redux-Toolkit, git, npm, and Material UI, were instrumental in creating a user-friendly online store that met the needs of our customers. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+          keywords: ['React', 'JavaScript', 'Redux/Redux-Toolkit', 'git', 'npm', 'Material UI'],
         keyResponsibilities: {
           title: 'Key Responsibilities:',
           responsibilitiesList: [
@@ -299,8 +299,8 @@ const workData: WorkExperience = {
       dateRange: '01/2020 - 03/2020',
       jobSummary: {
         summaryText:
-          'As a ReactJS Engineer at Astomi, I was responsible for developing and maintaining an online store using React, Redux, Redux-toolkit, git, and npm. My technical skills in front-end development were crucial in building a user-friendly online store that met the needs of our customers. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
-        keywords: ['React', 'git', 'npm'],
+          'As a ReactJS Engineer at Astomi, I was responsible for developing and maintaining an online store using React, Redux/Redux-Toolkit, git, and npm. My technical skills in front-end development were crucial in building a user-friendly online store that met the needs of our customers. My ability to organize workflows and manage processes ensured the timely delivery of milestones, making me a valuable team member.',
+        keywords: ['React', 'git', 'npm', 'Redux/Redux-Toolkit'],
         keyResponsibilities: {
           title: 'Key Responsibilities:',
           responsibilitiesList: [

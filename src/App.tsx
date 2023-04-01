@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './App.css';
 import {
   Box,
@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { Route, Switch } from 'react-router-dom';
 
-import { Home, Stack, Work, Projects } from './pages';
+import { Home, Stack, Work, Projects, Contact } from './pages';
 import Navigation from './components/Navigation/Navigation';
 import Socials from './components/UI/Socials';
 import Modal from './components/UI/Modal';
@@ -19,6 +19,9 @@ import Context from './Context';
 
 
 function App() {
+  const context = useContext(Context)
+  // @ts-expect-error
+  const {isMessageSent} = context
   const [selectedItem, setSelectedItem] = useState<
     WorkExperienceItem | ProjectItem | null
   >(null);
@@ -36,6 +39,8 @@ function App() {
     animateX: { x: '0%' },
     to: '/'
   });
+  
+  const [isMsgSent, setIsMsgSent] = useState(isMessageSent)
 
   const store = {
     selectedItem,
@@ -44,7 +49,9 @@ function App() {
     isOpen,
     onClose,
     animationPlayed,
-    setAnimationPlayed
+    setAnimationPlayed,
+    setIsMsgSent,
+    isMsgSent
   }
 
   const breakpoints = useBreakpoint();
@@ -80,26 +87,29 @@ function App() {
                   animateTab={animateTab.to === '/' ? animateTab : noAnimation}
                 />
               </Route>
-              <Route path="/stack">
+              <Route path='/stack'>
                 <Stack
                   animateTab={
                     animateTab.to === '/stack' ? animateTab : noAnimation
                   }
                 />
               </Route>
-              <Route path="/work">
+              <Route path='/work'>
                 <Work
                   animateTab={
                     animateTab.to === '/work' ? animateTab : noAnimation
                   }
                 />
               </Route>
-              <Route path="/projects">
+              <Route path='/projects'>
                 <Projects
                   animateTab={
                     animateTab.to === '/projects' ? animateTab : noAnimation
                   }
                 />
+              </Route>
+              <Route path='/contact'>
+                  <Contact />
               </Route>
               <Route path="*">
                 <Text color="gray.100">Page Not Found Or in Progress...</Text>
