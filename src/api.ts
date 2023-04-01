@@ -1,9 +1,6 @@
 const BOT_TOKEN = process.env.REACT_APP_BOT_TOKEN
 const CHAT_ID = process.env.REACT_APP_CHAT_ID
 
-console.log(BOT_TOKEN);
-
-
 const api = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`;
 
 interface MsgBotType {
