@@ -1,4 +1,4 @@
 declare module "*.png" {
-    const content: React.FunctionComponent<React.ImgHTMLAttributes>;
+    const content: string;
     export default content;
 }

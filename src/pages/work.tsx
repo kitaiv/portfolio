@@ -33,6 +33,7 @@ const Stack = ({animateTab}: PropTypes) => {
             transition={{ type: "spring", duration: 1 }}
             initial={initialX}
             animate={animateX}
+            style={{willChange: "transform"}}
         >
             <WorkComponent isAnimated={animationPlayed.workAnimation} />
         </motion.div>

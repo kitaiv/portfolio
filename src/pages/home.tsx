@@ -30,7 +30,6 @@ const Home = ({ animateTab }: PropTypes) => {
             transition={{ type: "spring", duration: 1 }}
             initial={initialX}
             animate={animateX}
-            layout='position'
             style={{willChange: "transform"}}
         >
             <HomeComponent isAnimated={animationPlayed.homeAnimation} />

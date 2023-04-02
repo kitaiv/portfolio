@@ -1,4 +1,4 @@
-import React, {useContext, useCallback} from 'react'
+import React, { useContext, useCallback } from 'react'
 import StackComponent from '../components/Stack/StackComponent'
 import { AnimationTab } from '../types'
 import { motion } from 'framer-motion'
@@ -7,13 +7,13 @@ import Context from '../Context'
 type PropTypes = {
     animateTab: AnimationTab
 }
-const Stack = ({animateTab}: PropTypes) => {
+const Stack = ({ animateTab }: PropTypes) => {
 
     const context = useContext(Context)
     // @ts-expect-error
-    const {animationPlayed, setAnimationPlayed} = context
+    const { animationPlayed, setAnimationPlayed } = context
 
-    const {initialX, animateX} = animateTab
+    const { initialX, animateX } = animateTab
 
     const cacheAnimation = useCallback(() => {
         setAnimationPlayed((prevState: any) => ({ ...prevState, stackAnimation: true }))
@@ -26,12 +26,13 @@ const Stack = ({animateTab}: PropTypes) => {
 
     //location.pathname === animateTab.activeTab ? 
     return (
-            <motion.div
+        <motion.div
             transition={{ type: "spring", duration: 1 }}
             initial={initialX}
             animate={animateX}
+            style={{ willChange: "transform" }}
         >
-            <StackComponent isAnimated={animationPlayed.stackAnimation}/>
+            <StackComponent isAnimated={animationPlayed.stackAnimation} />
         </motion.div>
     )
 }

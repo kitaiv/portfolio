@@ -30,6 +30,7 @@ const Projects = ({animateTab}: PropTypes) => {
             transition={{ type: "spring", duration: 1 }}
             initial={initialX}
             animate={animateX}
+            style={{willChange: "transform"}}
         >
             <ProjectsComponent isAnimated={animationPlayed.projectsAnimation}/>
         </motion.div>
