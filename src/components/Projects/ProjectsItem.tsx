@@ -23,7 +23,7 @@ const ProjectsItem = ({ project }: PropTypes) => {
         onOpen();
     };
 
-
+    //TODO: Add animation to ProjectItem
     return (
         <Card
             direction={{ base: 'row', sm: 'row' }}

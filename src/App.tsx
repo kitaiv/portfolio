@@ -78,7 +78,7 @@ function App() {
           h="100vh"
         >
           <Navigation setAnimateTab={setAnimateTab} />
-          <Flex h="100%" align={'center'}>
+          <Flex h="100%" w='100%' align={'center'} justifyContent='center'>
             <Switch>
               <Route exact path="/">
                 <Home

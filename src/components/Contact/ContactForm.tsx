@@ -19,7 +19,9 @@ const ContactForm = () => {
 
   function validateEmail(value: string) {
     let error
+    const regex = /^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+$/;
     if (!value) error = "You cannot leave this field empty"
+    if(!regex.test(value)) return 'Invalid email address'
     return error
   }
 
@@ -62,7 +64,7 @@ const ContactForm = () => {
       }}
     >
       {(props) => (
-        <Form style={{width: '100vh'}}>
+        <Form style={{width: 'inherit'}}>
           <Field name='name' validate={validateName}>
             {({ field, form }: any) => (
               <FormControl isInvalid={form.errors.name && form.touched.name}>
@@ -75,8 +77,8 @@ const ContactForm = () => {
           <Field name='email' validate={validateEmail}>
             {({ field, form }: any) => (
               <FormControl isInvalid={form.errors.email && form.touched.email}>
-                <FormLabel color='#fff'>Email</FormLabel>
-                <Input {...field} placeholder='mail@example.com' color='#fff' />
+                <FormLabel color='#fff' mt={5}>Email</FormLabel>
+                <Input {...field} placeholder='example@mail.com' color='#fff' />
                 <FormErrorMessage>{form.errors.email}</FormErrorMessage>
               </FormControl>
             )}
@@ -84,7 +86,7 @@ const ContactForm = () => {
           <Field name='message' validate={validateMessage}>
             {({ field, form }: any) => (
               <FormControl isInvalid={form.errors.message && form.touched.message}>
-                <FormLabel color='#fff'>Message</FormLabel>
+                <FormLabel color='#fff' mt={5}>Message</FormLabel>
                 <Textarea
                   {...field}
                   placeholder='Input message'

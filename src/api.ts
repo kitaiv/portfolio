@@ -13,8 +13,11 @@ interface MsgBotType {
 
 const sendMessageToBot = async (msg: MsgBotType) => {
   try {
+    const msgStr = `[Name/Company]: ${msg.name}
+    [Email]: ${msg.email}
+    [Message]: ${msg.message}`
     const response = await fetch(
-      api + `${msg.name}/${msg.email}/${msg.message}`,
+      api + msgStr,
       { method: 'GET' }
     );
     if (!response.ok) {
