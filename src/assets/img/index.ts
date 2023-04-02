@@ -1,4 +1,4 @@
-import BootstrapIcon from './bootstrap5.svg';
+import BootstrapIcon from './bootstrap5.svg'
 import EslintIcon from './eslint.svg';
 import GitIcon from './git.svg';
 import HtmlIcon from './html5.svg';
@@ -20,14 +20,13 @@ import TwitterIcon from './twitter-square.svg';
 import GitHubIcon from './github-square.svg';
 import LinkedInIcon from './linkedin-square.svg';
 import WavingHandIcon from './waving-hand.svg';
-// import GameReqsBg from './gamereqs_bg.png'
 import GameReqsBg from './gamereqs.png';
 import TodoAppBg from './todo-app.png';
 import VolumeDeckBg from './volumedeck.png';
-import ThunderIcon from './thunder-icon.svg'
-import GithubSmallIcon from './github-icon.svg'
-import ProductionIcon from './prod-icon.svg'
-import ProjectBg from './project-bg.png'
+import ThunderIcon from './thunder-icon.svg';
+import GithubSmallIcon from './github-icon.svg';
+import ProductionIcon from './prod-icon.svg';
+import ProjectBg from './project-bg.png';
 
 export {
   BootstrapIcon,

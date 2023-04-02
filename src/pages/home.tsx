@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect } from 'react';
 import HomeComponent from '../components/Home/HomeComponent';
 import { AnimationTab } from '../types';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Context from '../Context';
 
 type PropTypes = {
