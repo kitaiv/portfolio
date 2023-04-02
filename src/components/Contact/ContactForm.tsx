@@ -42,7 +42,6 @@ const ContactForm = () => {
             }
           })
           .catch(error => {
-            console.error('Error:', error)
             fetchError({
               title: "Error occured while sending your message. Please try again later!",
               status: 'error',

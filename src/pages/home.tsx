@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect } from 'react';
 import HomeComponent from '../components/Home/HomeComponent';
 import { AnimationTab } from '../types';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import Context from '../Context';
 
 type PropTypes = {
@@ -11,9 +11,8 @@ type PropTypes = {
 }
 
 const Home = ({ animateTab }: PropTypes) => {
-
     const context = useContext(Context)
-    // @ts-ignore
+    // @ts-expect-error
     const {animationPlayed, setAnimationPlayed} = context
 
     const { initialX, animateX } = animateTab
@@ -31,6 +30,8 @@ const Home = ({ animateTab }: PropTypes) => {
             transition={{ type: "spring", duration: 1 }}
             initial={initialX}
             animate={animateX}
+            layout='position'
+            style={{willChange: "transform"}}
         >
             <HomeComponent isAnimated={animationPlayed.homeAnimation} />
         </motion.div>

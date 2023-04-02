@@ -10,7 +10,7 @@ type PropTypes = {
 const Stack = ({animateTab}: PropTypes) => {
 
     const context = useContext(Context)
-    // @ts-ignore
+    // @ts-expect-error
     const {animationPlayed, setAnimationPlayed} = context
 
     const {initialX, animateX} = animateTab

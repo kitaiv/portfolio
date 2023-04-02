@@ -59,7 +59,6 @@ const HomeComponent = ({ isAnimated }: PropsType) => {
     }
 
     return (
-        // @ts-ignore
         <Flex direction={breakpoint === 'base' && 'sm' ? 'column' : 'row'} gap={10} >
             <Box>
                 <Center>
@@ -78,7 +77,6 @@ const HomeComponent = ({ isAnimated }: PropsType) => {
                                 animate={!isAnimated ? ctrls : {}}
                                 variants={wordAnimation}
                                 transition={{
-                                    // @ts-ignore
                                     delayChildren: index * 0.25,
                                     staggerChildren: 0.05,
                                 }}

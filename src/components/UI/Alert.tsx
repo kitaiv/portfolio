@@ -1,6 +1,8 @@
 import React from 'react'
 import { Alert, AlertIcon, AlertTitle, AlertDescription } from '@chakra-ui/react'
 
+//TODO: Give some styles for the component
+
 const AlertNotification = () => {
     return (
         <Alert

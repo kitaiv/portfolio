@@ -19,14 +19,12 @@ const Socials = () => {
             zIndex='999'
             filter='drop-shadow(12px 10px 5px rgba(0, 0, 0, 0.25));'
         >
-            {/* @ts-ignore */}
+           
             <Flex direction={'column'} gap={2}>
                 {
                     socialsData.socialsList.map((item: SocialItem) => (
-                        // @ts-ignore
                         <Tooltip hasArrow label={item.tooltip} placement='right' key={item.tooltip}>
                             <Link to={{pathname: item.link}} target='_blank'>
-                                {/* @ts-ignore */}
                                 <Image src={item.icon} key={item.icon} w='42px' h='42px' />
                             </Link>
                         </Tooltip>

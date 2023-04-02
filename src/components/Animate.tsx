@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion  } from 'framer-motion'
 import { AnimationDataType } from '../types'
+import { JsxElement } from 'typescript'
 
 type PropTypes = {
     children: string | JSX.Element | JSX.Element[]
@@ -9,7 +10,8 @@ type PropTypes = {
 
 const Animate = ({children, animationData}: PropTypes) => {
     const {initial, animate, transition, tag} = animationData
-    // @ts-ignore
+
+    // @ts-expect-error
     const MotionComponent = motion[tag];
 
     return (

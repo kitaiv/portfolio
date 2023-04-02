@@ -63,11 +63,9 @@ function App() {
   }, [animateTab]);
 
   return (
-    // @ts-ignore
     <Context.Provider value={store}>
       <Box>
         {breakpoints !== 'base' && 'sm' ? <Socials /> : null}
-        {/* @ts-ignore-uniontype */}
         <Container
           display="flex"
           flexDirection={

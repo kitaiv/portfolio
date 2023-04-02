@@ -1,6 +1,8 @@
 const BOT_TOKEN = process.env.REACT_APP_BOT_TOKEN
 const CHAT_ID = process.env.REACT_APP_CHAT_ID
 
+//TODO: Add text formatting or find out something about this
+
 const api = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`;
 
 interface MsgBotType {
@@ -21,7 +23,6 @@ const sendMessageToBot = async (msg: MsgBotType) => {
     const result = await response.json();
     return result;
   } catch (error) {
-    console.error('Error:', error);
     throw error;
   }
 };

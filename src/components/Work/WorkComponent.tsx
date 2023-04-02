@@ -13,7 +13,7 @@ type PropTypes = {
 const WorkComponent = ({ isAnimated }: PropTypes): JSX.Element => {
     const context = useContext(Context)
     
-    // @ts-ignore
+    // @ts-expect-error
     const {setSelectedItem, onOpen} = context
 
     const handleItemClick = (item: WorkExperienceItem) => {

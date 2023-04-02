@@ -3,7 +3,7 @@ import { navData } from '../../data'
 import { NavigationItem } from '../../types'
 import { Box, Button, ButtonGroup, Center, Tooltip, Image, useBreakpoint } from '@chakra-ui/react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 // import { AnimationTab } from '../../types'
 
 type PropTypes = {
@@ -11,6 +11,7 @@ type PropTypes = {
 }
 
 const Navigation = ({setAnimateTab}: PropTypes) => {
+    const shouldReduceMotion = useReducedMotion()
     const [activeTab, setActiveTab] = useState(1)
     const location = useLocation();
 
@@ -29,7 +30,7 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
         if(activeTab > id) {
             setActiveTab(id)
             return setAnimateTab({
-                initialX: {x: '110%'},
+                initialX: {x: shouldReduceMotion ? '50%' : '110%'},
                 animateX: {x: '0%'},
                 to
                 
@@ -39,7 +40,7 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
         if(activeTab < id) {
             setActiveTab(id)
             return setAnimateTab({
-                initialX: {x: '-110%'},
+                initialX: {x: shouldReduceMotion ? '-50%' : '-110%'},
                 animateX: {x: '0%'},
                 to
             })
@@ -50,7 +51,6 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
     return (
         <Box>
             <Center pt="5" pb={breakpoint === 'base' && 'sm' ? '5rem' : '0'}>
-                {/* @ts-ignore */}
                 <Box
                     display='flex'
                     alignItems='center'
@@ -70,8 +70,8 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
                                         ease: [0, 0.71, 0.2, 1.01],
                                         scale: {
                                             type: "spring",
-                                            damping: 4,
-                                            stiffness: 100,
+                                            damping: shouldReduceMotion ? 2 : 4,
+                                            stiffness: shouldReduceMotion ? 50 : 100,
                                             restDelta: 0.001
                                         }
                                     }}

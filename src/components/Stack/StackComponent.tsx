@@ -17,7 +17,6 @@ const StackComponent = ({ isAnimated }: PropsType) => {
     const thirdRow = stackData.stackList[stackData.stackList.length - 1]
 
     return (
-        // @ts-ignore
         <Flex gap={6} direction={'column'}>
             <Flex justify={'space-evenly'}>
                 {firstRow && firstRow.map((item: StackListItem) => (
