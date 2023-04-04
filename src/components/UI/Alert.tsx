@@ -1,8 +1,6 @@
 import React from 'react'
 import { Alert, AlertIcon, AlertTitle, AlertDescription } from '@chakra-ui/react'
 
-//TODO: Give some styles for the component
-
 const AlertNotification = () => {
     return (
         <Alert
@@ -12,7 +10,8 @@ const AlertNotification = () => {
             alignItems='center'
             justifyContent='center'
             textAlign='center'
-            height='200px'
+            height='250px'
+            borderRadius='12px'
             >
             <AlertIcon boxSize='40px' mr={0} />
             <AlertTitle mt={4} mb={1} fontSize='lg'>

@@ -49,8 +49,8 @@ const Navigation = ({setAnimateTab}: PropTypes) => {
     }
 
     return (
-        <Box>
-            <Center pt="5" pb={breakpoint === 'base' && 'sm' ? '5rem' : '0'}>
+        <Box position={breakpoint === 'base' && 'sm' ? 'fixed' : 'relative'} bottom={0} left={0}>
+            <Center pt="5" pb={breakpoint === 'base' && 'sm' ? '.5rem' : '0'}>
                 <Box
                     display='flex'
                     alignItems='center'
