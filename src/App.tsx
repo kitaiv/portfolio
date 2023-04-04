@@ -72,14 +72,13 @@ function App() {
             breakpoints === 'base' && 'sm' ? 'column-reverse' : 'column'
           }
           justifyContent={'flex-start'}
-          mt="4rem"
           alignItems={'center'}
           maxW="2xl"
           w="100%"
           h="100vh"
         >
           <Navigation setAnimateTab={setAnimateTab} />
-          <Flex h="max-content" w='100%' align={'center'} justifyContent='center'>
+          <Flex h="max-content" w='100%' align={'center'} justifyContent='center' mt='4rem'>
             <Switch>
               <Route exact path="/">
                 <Home
