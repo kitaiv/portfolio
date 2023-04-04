@@ -71,14 +71,14 @@ function App() {
           flexDirection={
             breakpoints === 'base' && 'sm' ? 'column-reverse' : 'column'
           }
-          justifyContent="space-between"
+          justifyContent={breakpoints === 'base' && 'sm' ? 'start' : 'space-between'}
           alignItems={'center'}
           maxW="2xl"
           w="100%"
           h="100vh"
         >
           <Navigation setAnimateTab={setAnimateTab} />
-          <Flex h="100%" w='100%' align={'center'} justifyContent='center'>
+          <Flex h="max-content" w='100%' align={'center'} justifyContent='center'>
             <Switch>
               <Route exact path="/">
                 <Home
@@ -115,9 +115,9 @@ function App() {
             </Switch>
           </Flex>
         </Container>
-        {selectedItem && (
-          <Modal />
-        )}
+          {selectedItem && (
+            <Modal />
+          )}
       </Box>
     </Context.Provider>
   );
