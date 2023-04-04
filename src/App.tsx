@@ -71,7 +71,7 @@ function App() {
           flexDirection={
             breakpoints === 'base' && 'sm' ? 'column-reverse' : 'column'
           }
-          justifyContent={breakpoints === 'base' && 'sm' ? 'start' : 'space-between'}
+          justifyContent={'space-between'}
           alignItems={'center'}
           maxW="2xl"
           w="100%"
