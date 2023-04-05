@@ -22,6 +22,7 @@ function App() {
   const context = useContext(Context)
   // @ts-expect-error
   const {isMessageSent} = context
+  const breakpoints = useBreakpoint();
   const [selectedItem, setSelectedItem] = useState<
     WorkExperienceItem | ProjectItem | null
   >(null);
@@ -54,8 +55,6 @@ function App() {
     isMsgSent
   }
 
-  const breakpoints = useBreakpoint();
-
   const noAnimation = { initialX: {}, animateX: {} };
 
   return (
@@ -74,7 +73,7 @@ function App() {
           h="100vh"
         >
           <Navigation setAnimateTab={setAnimateTab} />
-          <Flex h="100%" w='100%' align={breakpoints === 'base' && 'sm' ? 'flex-start' : 'center'} justifyContent='center'>
+          <Flex h="100%" w='100%' align={breakpoints === 'base' && 'sm' ? 'flex-start' : 'center'} justifyContent='center' pt={breakpoints === 'base' && 'sm' ? '2rem' : '0'}>
             <Switch>
               <Route exact path="/">
                 <Home
