@@ -1,22 +1,14 @@
-import React, {useContext, useCallback} from 'react'
-import { AnimationTab } from '../types'
+import React, { useContext, useCallback } from 'react'
 import ProjectsComponent from '../components/Projects/ProjectsComponent'
-import { motion } from 'framer-motion'
 import Context from '../Context'
+import WithAnimation from '../components/withAnimation'
 
-
-type PropTypes = {
-    animateTab: AnimationTab
-}
-
-const Projects = ({animateTab}: PropTypes) => {
+const Projects = () => {
 
     const context = useContext(Context)
     // @ts-expect-error
-    const {animationPlayed, setAnimationPlayed} = context
+    const { animationPlayed, setAnimationPlayed } = context
 
-    const { initialX, animateX } = animateTab
-    
     const cacheAnimation = useCallback(() => {
         setAnimationPlayed((prevState: any) => ({ ...prevState, projectsAnimation: true }))
     }, [setAnimationPlayed])
@@ -26,15 +18,8 @@ const Projects = ({animateTab}: PropTypes) => {
     }, [cacheAnimation])
 
     return (
-        <motion.div
-            transition={{ type: "spring", duration: 1 }}
-            initial={initialX}
-            animate={animateX}
-            style={{willChange: "transform"}}
-        >
-            <ProjectsComponent isAnimated={animationPlayed.projectsAnimation}/>
-        </motion.div>
+        <ProjectsComponent isAnimated={animationPlayed.projectsAnimation} />
     )
 }
 
-export default Projects;
+export default WithAnimation(Projects);

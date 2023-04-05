@@ -58,10 +58,6 @@ function App() {
 
   const noAnimation = { initialX: {}, animateX: {} };
 
-  React.useEffect(() => {
-    //some code here
-  }, [animateTab]);
-
   return (
     <Context.Provider value={store}>
       <Box>
@@ -71,14 +67,14 @@ function App() {
           flexDirection={
             breakpoints === 'base' && 'sm' ? 'column-reverse' : 'column'
           }
-          justifyContent={'flex-start'}
+          justifyContent={breakpoints === 'base' && 'sm' ? 'flex-end' : 'start'}
           alignItems={'center'}
           maxW="2xl"
           w="100%"
           h="100vh"
         >
           <Navigation setAnimateTab={setAnimateTab} />
-          <Flex h="max-content" w='100%' align={'center'} justifyContent='center' mt='4rem'>
+          <Flex h="100%" w='100%' align={breakpoints === 'base' && 'sm' ? 'flex-start' : 'center'} justifyContent='center'>
             <Switch>
               <Route exact path="/">
                 <Home

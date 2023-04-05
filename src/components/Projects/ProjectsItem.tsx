@@ -26,6 +26,7 @@ const ProjectsItem = ({ project }: PropTypes) => {
     return (
         <Card
             direction={{ base: 'row', sm: 'row' }}
+            size='sm'
             overflow='hidden'
             variant='elevated'
             background='gray.700'

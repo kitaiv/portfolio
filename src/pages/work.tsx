@@ -1,22 +1,14 @@
-import React, {useContext, useCallback} from 'react'
-import { AnimationTab } from '../types'
-import { motion } from 'framer-motion'
+import React, { useContext, useCallback } from 'react'
 import WorkComponent from '../components/Work/WorkComponent'
 import Context from '../Context'
+import WithAnimation from '../components/withAnimation'
 
-type PropTypes = {
-    // isAnimated: boolean,
-    // setAnimationPlayed: React.Dispatch<React.SetStateAction<AnimationStates>>,
-    animateTab: AnimationTab
-}
 
-const Stack = ({animateTab}: PropTypes) => {
+const Stack = () => {
 
     const context = useContext(Context)
     //@ts-expect-error
-    const {animationPlayed, setAnimationPlayed} = context
-
-    const {initialX, animateX} = animateTab
+    const { animationPlayed, setAnimationPlayed } = context
 
     const cacheAnimation = useCallback(() => {
         setAnimationPlayed((prevState: any) => ({ ...prevState, workAnimation: true }))
@@ -29,15 +21,8 @@ const Stack = ({animateTab}: PropTypes) => {
 
     //location.pathname === animateTab.activeTab ? 
     return (
-        <motion.div
-            transition={{ type: "spring", duration: 1 }}
-            initial={initialX}
-            animate={animateX}
-            style={{willChange: "transform"}}
-        >
-            <WorkComponent isAnimated={animationPlayed.workAnimation} />
-        </motion.div>
+        <WorkComponent isAnimated={animationPlayed.workAnimation} />
     )
 }
 
-export default Stack
+export default WithAnimation(Stack)

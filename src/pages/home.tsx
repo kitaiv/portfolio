@@ -1,21 +1,13 @@
-import React, { useCallback, useContext, useEffect } from 'react';
+import React, {useContext, useCallback, useEffect} from 'react';
 import HomeComponent from '../components/Home/HomeComponent';
-import { AnimationTab } from '../types';
-import { motion } from 'framer-motion';
+import WithAnimation from '../components/withAnimation';
 import Context from '../Context';
 
-type PropTypes = {
-    // isAnimated: boolean,
-    // setAnimationPlayed: React.Dispatch<React.SetStateAction<AnimationStates>>
-    animateTab: AnimationTab
-}
 
-const Home = ({ animateTab }: PropTypes) => {
+const Home = () => {
     const context = useContext(Context)
     // @ts-expect-error
-    const {animationPlayed, setAnimationPlayed} = context
-
-    const { initialX, animateX } = animateTab
+    const { animationPlayed, setAnimationPlayed } = context
 
     const cacheAnimation = useCallback(() => {
         setAnimationPlayed((prevState: any) => ({ ...prevState, homeAnimation: true }))
@@ -25,16 +17,7 @@ const Home = ({ animateTab }: PropTypes) => {
         return () => cacheAnimation()
     }, [cacheAnimation])
 
-    return (
-        <motion.div
-            transition={{ type: "spring", duration: 1 }}
-            initial={initialX}
-            animate={animateX}
-            style={{willChange: "transform"}}
-        >
-            <HomeComponent isAnimated={animationPlayed.homeAnimation} />
-        </motion.div>
-    )
+    return <HomeComponent isAnimated={animationPlayed.homeAnimation} />
 }
 
-export default Home;
+export default WithAnimation(Home);

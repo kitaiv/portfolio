@@ -10,7 +10,7 @@ import { WavingHandIcon } from '../../assets/img';
 import cv from '../../assets/CV.pdf'
 
 type PropsType = {
-    isAnimated: boolean;
+    isAnimated?: boolean;
 }
 
 const HomeComponent = ({ isAnimated }: PropsType) => {
