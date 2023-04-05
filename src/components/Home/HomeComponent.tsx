@@ -133,7 +133,7 @@ const HomeComponent = ({ isAnimated }: PropsType) => {
                     })}
                 </Text>
                 <Link to={{ pathname: cv }} target="_blank" color="white">
-                    <Button colorScheme='yellow' variant='outline' mt="4rem" float={breakpoint === 'base' && 'sm' ? 'right' : 'left'}>
+                    <Button colorScheme='yellow' variant='outline' mt="2rem" float={breakpoint === 'base' && 'sm' ? 'right' : 'left'}>
                         Download CV
                     </Button>
                 </Link>
