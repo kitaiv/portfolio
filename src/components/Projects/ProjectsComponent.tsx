@@ -1,14 +1,18 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Stack } from '@chakra-ui/react';
 import { projectsData } from '../../data';
 import ProjectsItem from './ProjectsItem';
 import { motion } from 'framer-motion';
+import Context from '../../Context';
 
-type PropTypes = {
-    isAnimated: boolean
-}
+const ProjectsComponent = () => {
 
-const ProjectsComponent = ({ isAnimated }: PropTypes) => {
+    const context = useContext(Context);
+
+    // @ts-expect-error
+    const {animationPlayed} = context
+    
+    const isAnimated = animationPlayed.projectsAnimation
 
     const { projectsList } = projectsData
 

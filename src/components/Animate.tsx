@@ -1,14 +1,14 @@
 import React from 'react'
 import { motion  } from 'framer-motion'
 import { AnimationDataType } from '../types'
-import { JsxElement } from 'typescript'
 
 type PropTypes = {
     children: string | JSX.Element | JSX.Element[]
-    animationData: AnimationDataType['stackAnimation']
+    animationData: AnimationDataType['stackAnimation'] | undefined
 }
 
 const Animate = ({children, animationData}: PropTypes) => {
+    //@ts-expect-error
     const {initial, animate, transition, tag} = animationData
 
     // @ts-expect-error

@@ -6,15 +6,14 @@ import { motion } from 'framer-motion'
 import { WorkExperienceItem } from '../../types'
 import Context from '../../Context'
 
-type PropTypes = {
-    isAnimated: boolean
-}
-
-const WorkComponent = ({ isAnimated }: PropTypes): JSX.Element => {
+const WorkComponent = (): JSX.Element => {
+    
     const context = useContext(Context)
     
     // @ts-expect-error
-    const {setSelectedItem, onOpen} = context
+    const {setSelectedItem, onOpen, animationPlayed} = context
+
+    const isAnimated = animationPlayed.workAnimation
 
     const handleItemClick = (item: WorkExperienceItem) => {
         setSelectedItem(item);

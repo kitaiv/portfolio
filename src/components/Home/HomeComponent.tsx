@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useLayoutEffect, useContext } from 'react'
+import Context from '../../Context'
 import { Box, Flex, Text, Image, Button, useBreakpoint, Center } from '@chakra-ui/react'
 import { PicOfMe } from '../../assets/img'
 import { homeData } from '../../data'
@@ -9,20 +10,22 @@ import { WavingHandIcon } from '../../assets/img';
 // @ts-ignore-import
 import cv from '../../assets/CV.pdf'
 
-type PropsType = {
-    isAnimated?: boolean;
-}
-
-const HomeComponent = ({ isAnimated }: PropsType) => {
+const HomeComponent = () => {
     const ctrls = useAnimation();
     const breakpoint = useBreakpoint();
+    const context = useContext(Context);
+
+    // @ts-expect-error
+    const {animationPlayed} = context
+
+    const isAnimated = animationPlayed.homeAnimation
 
     const { ref, inView } = useInView({
         threshold: 0.5,
         triggerOnce: true,
     });
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (inView) {
             ctrls.start("visible");
         }

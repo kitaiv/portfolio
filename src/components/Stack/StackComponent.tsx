@@ -1,16 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Center, Flex, Spacer, Image, Tooltip } from '@chakra-ui/react';
 import { stackData } from '../../data';
 import { StackListItem } from '../../types';
 import Animate from '../Animate';
 import { animate } from '../../data';
+import Context from '../../Context';
 
+const StackComponent = () => {
 
-type PropsType = {
-    isAnimated: boolean
-}
+    const context = useContext(Context);
 
-const StackComponent = ({ isAnimated }: PropsType) => {
+    // @ts-expect-error
+    const {animationPlayed} = context
+
+    const isAnimated = animationPlayed.stackAnimation
 
     const firstRow = stackData.stackList.slice(0, 5);
     const secondRow = stackData.stackList.slice(5, 9);

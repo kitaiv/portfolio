@@ -26,14 +26,13 @@ function App() {
   const [selectedItem, setSelectedItem] = useState<
     WorkExperienceItem | ProjectItem | null
   >(null);
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   const [animationPlayed, setAnimationPlayed] = useState({
     homeAnimation: false,
     stackAnimation: false,
     workAnimation: false,
     projectsAnimation: false
-  });
+});
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [animateTab, setAnimateTab] = useState({
     initialX: { x: '0%' },
@@ -49,10 +48,10 @@ function App() {
     onOpen,
     isOpen,
     onClose,
-    animationPlayed,
-    setAnimationPlayed,
     setIsMsgSent,
-    isMsgSent
+    isMsgSent,
+    animationPlayed, 
+    setAnimationPlayed
   }
 
   const noAnimation = { initialX: {}, animateX: {} };
