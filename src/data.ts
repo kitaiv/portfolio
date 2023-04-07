@@ -388,4 +388,17 @@ const socialsData: Socials = {
   ]
 };
 
-export { homeData, stackData, workData, navData, socialsData, animate, projectsData };
+const currentYear = new Date().getFullYear()
+
+const footerData = {
+  seeCode: {
+    text: 'See code',
+    link: 'https://github.com/kitaiv/portfolio'
+  },
+  footerText: {
+    text_1: 'Design and built fully by me',
+    text_2: '®All rights reserved @' + currentYear
+  }
+}
+
+export { homeData, stackData, workData, navData, socialsData, animate, projectsData, footerData};

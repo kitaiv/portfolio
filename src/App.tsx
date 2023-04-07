@@ -16,6 +16,8 @@ import Socials from './components/UI/Socials';
 import Modal from './components/UI/Modal';
 import { ProjectItem, WorkExperienceItem } from './types';
 import Context from './Context';
+import FooterComponent from './components/Footer/FooterComponent';
+import Info from './components/UI/Info';
 
 
 function App() {
@@ -60,6 +62,7 @@ function App() {
     <Context.Provider value={store}>
       <Box>
         {breakpoints !== 'base' && 'sm' ? <Socials /> : null}
+        <Info />
         <Container
           display="flex"
           flexDirection={
@@ -72,7 +75,7 @@ function App() {
           h="100vh"
         >
           <Navigation setAnimateTab={setAnimateTab} />
-          <Flex h="100%" w='100%' align={breakpoints === 'base' && 'sm' ? 'flex-start' : 'center'} justifyContent='center' pt={breakpoints === 'base' && 'sm' ? '2rem' : '0'}>
+          <Flex h="100%" w='100%' align={breakpoints === 'base' && 'sm' ? 'flex-start' : 'center'} justifyContent='center' pt={breakpoints === 'base' && 'sm' ? '4rem' : '0'}>
             <Switch>
               <Route exact path="/">
                 <Home
@@ -112,6 +115,7 @@ function App() {
           {selectedItem && (
             <Modal />
           )}
+          <FooterComponent />
       </Box>
     </Context.Provider>
   );

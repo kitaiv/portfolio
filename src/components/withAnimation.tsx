@@ -58,7 +58,7 @@ function withAnimation(Component: React.ElementType) {
         
         return (
             <motion.div
-                transition={{ type: "spring", duration: 1 }}
+                transition={{ type: "spring", duration: 0.8 }}
                 initial={props.animateTab.initialX}
                 animate={props.animateTab.animateX}
                 style={{ willChange: "transform" }}
