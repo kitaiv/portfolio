@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Popover, PopoverTrigger, Portal, PopoverContent, PopoverArrow, PopoverHeader, PopoverCloseButton, PopoverBody, Button, PopoverFooter, Link, Image, Text } from '@chakra-ui/react'
+import { Box, Popover, PopoverTrigger, Portal, PopoverContent, PopoverBody, Button, PopoverFooter, Link, Image, Text } from '@chakra-ui/react'
 import { WarningIcon } from '@chakra-ui/icons'
 import { useBreakpoint } from '@chakra-ui/react'
 import { footerData } from '../../data'
