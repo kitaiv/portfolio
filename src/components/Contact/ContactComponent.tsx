@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useLayoutEffect} from 'react';
 import { Box } from '@chakra-ui/react';
 import ContactForm from './ContactForm';
 import Context from '../../Context';
@@ -8,7 +8,11 @@ const ContactComponent = () => {
     const context = useContext(Context)
 
     // @ts-expect-error
-    const {isMsgSent} = context
+    const {isMsgSent, handlePageTitleChange} = context
+
+    useLayoutEffect(() => {
+        handlePageTitleChange('Contact me')
+    }, [handlePageTitleChange])
 
     return (
         <Box w='100%'>

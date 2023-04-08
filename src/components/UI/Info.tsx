@@ -21,16 +21,16 @@ const Info = () => {
                 <PopoverTrigger>
                     <Button
                         variant='outline' 
-                        borderColor='gray.400' 
+                        borderColor='gray.100' 
                         borderWidth='2px' 
                         _hover={{ 'background': 'inherit' }}
                         _active={{borderColor: 'twitter'}}
                     >
-                        <WarningIcon color='gray.400' />
+                        <WarningIcon color='gray.100' />
                     </Button>
                 </PopoverTrigger>
                 <Portal>
-                    <PopoverContent bg="gray.700" border='gray.700' color='gray.200' textAlign='center'>
+                    <PopoverContent bg="gray.700" border='gray.200' color='gray.200' textAlign='center' boxShadow='-6px 10px 15px 5px rgba(0,0,0,0.7)'>
                         {/* <PopoverArrow /> */}
                         <PopoverBody>
                             <Link href={seeCode.link} target='_blank'>

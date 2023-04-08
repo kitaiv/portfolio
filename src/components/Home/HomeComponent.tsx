@@ -65,7 +65,7 @@ const HomeComponent = () => {
         <Flex direction={breakpoint === 'base' && 'sm' ? 'column' : 'row'} gap={10} >
             <Box>
                 <Center>
-                    <Image src={PicOfMe} alt="pic of me" w={breakpoint === 'base' && 'sm' ? '300px' : 'auto'}/>
+                    <Image src={PicOfMe} alt="pic of me" w={breakpoint === 'base' && 'sm' ? '300px' : '100%'}/>
                 </Center>
             </Box>
             <Box w='100%'>

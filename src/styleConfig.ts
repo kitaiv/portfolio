@@ -44,6 +44,10 @@ const theme = extendTheme(breakpoints, {
         }
     }
   },
+  fonts: {
+    heading: `'Heading Font Name', sans-serif`,
+    body: `'Body Font Name', sans-serif`,
+  },
   dialog: {
     borderRadius: 'md',
     bg: `purple.100`,

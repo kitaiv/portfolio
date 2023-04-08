@@ -19,7 +19,7 @@ function withAnimation(Component: React.ElementType) {
         const context = useContext(Context)
 
         // @ts-expect-error
-        const {animationPlayed, setAnimationPlayed} = context
+        const {animationPlayed, setAnimationPlayed, handlePageTitleChange} = context
 
         const [animationStateValue, setAnimationStateValue] = useState<string>('')
 
@@ -38,17 +38,22 @@ function withAnimation(Component: React.ElementType) {
             switch (location.pathname) {
                 case '/':
                     memoizeAnimationStateValue('homeAnimation')
+                    handlePageTitleChange('Home')
                     break;
                 case '/stack':
                     memoizeAnimationStateValue('stackAnimation')
+                    handlePageTitleChange('Stack')
                     break;
                 case '/projects':
                     memoizeAnimationStateValue('projectsAnimation')
+                    handlePageTitleChange('Projects')
                     break;
                 case '/work':
                     memoizeAnimationStateValue('workAnimation')
+                    handlePageTitleChange('Work Experience')
                     break;
                 default:
+                    handlePageTitleChange('Not Found')
                     return;
             }
 

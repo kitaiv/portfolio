@@ -30,7 +30,7 @@ const ProjectsItem = ({ project }: PropTypes) => {
             overflow='hidden'
             variant='elevated'
             background='gray.700'
-            color='gray.300'
+            color='gray.200'
             px='2rem'
             h={breakpoint === 'base' && 'sm' ? '150px' : 'auto'}
         >

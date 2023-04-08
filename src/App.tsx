@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-import './App.css';
+import React, { useState, useContext, useLayoutEffect } from 'react';
 import {
   Box,
   Container,
@@ -9,8 +8,7 @@ import {
   useDisclosure
 } from '@chakra-ui/react';
 import { Route, Switch } from 'react-router-dom';
-
-import { Home, Stack, Work, Projects, Contact } from './pages';
+import { Home, Stack, Work, Projects, Contact, NotFound } from './pages';
 import Navigation from './components/Navigation/Navigation';
 import Socials from './components/UI/Socials';
 import Modal from './components/UI/Modal';
@@ -21,6 +19,7 @@ import Info from './components/UI/Info';
 
 
 function App() {
+  const [pageTitle, setPageTitle] = useState("")
   const context = useContext(Context)
   // @ts-expect-error
   const {isMessageSent} = context
@@ -44,6 +43,10 @@ function App() {
   
   const [isMsgSent, setIsMsgSent] = useState(isMessageSent)
 
+  const handlePageTitleChange = (prefix: string) => {
+    setPageTitle("Svyatoslav's Portfolio | " + prefix)
+  }
+
   const store = {
     selectedItem,
     setSelectedItem,
@@ -53,10 +56,15 @@ function App() {
     setIsMsgSent,
     isMsgSent,
     animationPlayed, 
-    setAnimationPlayed
+    setAnimationPlayed,
+    handlePageTitleChange
   }
 
   const noAnimation = { initialX: {}, animateX: {} };
+
+  useLayoutEffect(() => {
+    document.title = pageTitle
+  }, [pageTitle])
 
   return (
     <Context.Provider value={store}>
@@ -107,7 +115,7 @@ function App() {
                   <Contact />
               </Route>
               <Route path="*">
-                <Text color="gray.100">Page Not Found Or in Progress...</Text>
+                <NotFound />
               </Route>
             </Switch>
           </Flex>

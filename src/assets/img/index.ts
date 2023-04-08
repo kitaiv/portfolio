@@ -27,6 +27,7 @@ import ThunderIcon from './thunder-icon.svg';
 import GithubSmallIcon from './github-icon.svg';
 import ProductionIcon from './prod-icon.svg';
 import ProjectBg from './project-bg.png';
+import Sad404Icon from './sad404.svg'
 
 export {
   BootstrapIcon,
@@ -57,5 +58,6 @@ export {
   ThunderIcon,
   GithubSmallIcon,
   ProductionIcon,
-  ProjectBg
+  ProjectBg,
+  Sad404Icon
 };
