@@ -20,8 +20,8 @@ const ContactForm = () => {
   function validateEmail(value: string) {
     let error
     const regex = /^[\w.-]+@[a-zA-Z_-]+?(?:\.[a-zA-Z]{2,6})+$/;
-    if (!value) error = "You cannot leave this field empty"
-    if(!regex.test(value)) return 'Invalid email address'
+    if (!value) return error = "You cannot leave this field empty"
+    if(!regex.test(value)) return error = 'Invalid email address'
     return error
   }
 
@@ -56,11 +56,6 @@ const ContactForm = () => {
           console.error('Error:', error);
           actions.setSubmitting(false)
         }
-        
-        // setTimeout(() => {
-        //   alert(JSON.stringify(values, null, 2))
-        //   actions.setSubmitting(false)
-        // }, 1000)
       }}
     >
       {(props) => (
@@ -69,7 +64,7 @@ const ContactForm = () => {
             {({ field, form }: any) => (
               <FormControl isInvalid={form.errors.name && form.touched.name}>
                 <FormLabel color='#fff'>Name/Company</FormLabel>
-                <Input {...field} placeholder='Apple Inc.' color='#fff'/>
+                <Input {...field} placeholder='Apple Inc.' color='#fff' type={'text'} />
                 <FormErrorMessage>{form.errors.name}</FormErrorMessage>
               </FormControl>
             )}
@@ -78,7 +73,7 @@ const ContactForm = () => {
             {({ field, form }: any) => (
               <FormControl isInvalid={form.errors.email && form.touched.email}>
                 <FormLabel color='#fff' mt={5}>Email</FormLabel>
-                <Input {...field} placeholder='example@mail.com' color='#fff' />
+                <Input {...field} placeholder='example@mail.com' color='#fff' type={'email'} />
                 <FormErrorMessage>{form.errors.email}</FormErrorMessage>
               </FormControl>
             )}

@@ -22,7 +22,7 @@ function App() {
   const [pageTitle, setPageTitle] = useState("")
   const context = useContext(Context)
   // @ts-expect-error
-  const {isMessageSent} = context
+  const { isMessageSent } = context
   const breakpoints = useBreakpoint();
   const [selectedItem, setSelectedItem] = useState<
     WorkExperienceItem | ProjectItem | null
@@ -32,7 +32,7 @@ function App() {
     stackAnimation: false,
     workAnimation: false,
     projectsAnimation: false
-});
+  });
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [animateTab, setAnimateTab] = useState({
@@ -40,7 +40,7 @@ function App() {
     animateX: { x: '0%' },
     to: '/'
   });
-  
+
   const [isMsgSent, setIsMsgSent] = useState(isMessageSent)
 
   const handlePageTitleChange = (prefix: string) => {
@@ -55,7 +55,7 @@ function App() {
     onClose,
     setIsMsgSent,
     isMsgSent,
-    animationPlayed, 
+    animationPlayed,
     setAnimationPlayed,
     handlePageTitleChange
   }
@@ -83,7 +83,7 @@ function App() {
           h="100vh"
         >
           <Navigation setAnimateTab={setAnimateTab} />
-          <Flex h="100%" w='100%' align={breakpoints === 'base' && 'sm' ? 'flex-start' : 'center'} justifyContent='center' pt={breakpoints === 'base' && 'sm' ? '4rem' : '0'}>
+          <Flex role='main' h="100%" w='100%' align={breakpoints === 'base' && 'sm' ? 'flex-start' : 'center'} justifyContent='center' pt={breakpoints === 'base' && 'sm' ? '4rem' : '0'}>
             <Switch>
               <Route exact path="/">
                 <Home
@@ -112,7 +112,7 @@ function App() {
                 />
               </Route>
               <Route path='/contact'>
-                  <Contact />
+                <Contact />
               </Route>
               <Route path="*">
                 <NotFound />
@@ -120,10 +120,12 @@ function App() {
             </Switch>
           </Flex>
         </Container>
-          {selectedItem && (
-            <Modal />
-          )}
+        {selectedItem && (
+          <Modal />
+        )}
+        <footer>
           <FooterComponent />
+        </footer>
       </Box>
     </Context.Provider>
   );
