@@ -392,7 +392,7 @@ const currentYear = new Date().getFullYear()
 
 const footerData = {
   seeCode: {
-    text: 'See code',
+    text: 'See code >>',
     link: 'https://github.com/kitaiv/portfolio'
   },
   footerText: {

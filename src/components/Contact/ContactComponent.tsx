@@ -15,8 +15,13 @@ const ContactComponent = () => {
   }, [handlePageTitleChange]);
 
   return (
-    <Box w="100%" h='100vh' mt='3rem'>
-      <Tabs isFitted variant="enclosed" color='gray.200'>
+    <Box w="100%" h='100vh' mt='5rem'>
+      <Tabs 
+        isFitted 
+        variant='soft-rounded' 
+        color='gray.200' 
+        isLazy={true}
+    >
         <TabList mb="1em">
           <Tab>Send message</Tab>
           <Tab>Send Email</Tab>

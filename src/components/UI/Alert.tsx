@@ -12,6 +12,7 @@ const AlertNotification = () => {
             textAlign='center'
             height='250px'
             borderRadius='12px'
+            color='gray.800'
             >
             <AlertIcon boxSize='40px' mr={0} />
             <AlertTitle mt={4} mb={1} fontSize='lg'>

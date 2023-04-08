@@ -2,7 +2,6 @@ import React, { useState, useContext, useLayoutEffect } from 'react';
 import {
   Box,
   Container,
-  Text,
   useBreakpoint,
   Flex,
   useDisclosure
