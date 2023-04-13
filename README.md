@@ -1,11 +1,11 @@
 # Website Portfolio
-Welcome to my website portfolio repository! Here you will find the source code for my personal portfolio website showcasing my front-end development projects.
+_Welcome to my website portfolio repository! Here you will find the source code for my personal portfolio website showcasing my front-end development projects._
 
 # About Me
-My name is Svyatoslav and I am a front-end developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript, React, and other front-end technologies.
+_My name is Svyatoslav and I am a front-end developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, JavaScript, React, and other front-end technologies._
 
 # About the Website
-My website portfolio is a showcase of some of my favorite front-end development projects. It is built using React and styled with ChakraUI. The website is responsive and mobile-friendly, ensuring that it looks great on all devices.
+_My website portfolio is a showcase of some of my favorite front-end development projects. It is built using React and styled with ChakraUI. The website is responsive and mobile-friendly, ensuring that it looks great on all devices._
 
 # How to Run the Website
 **To run the website locally, follow these steps:**
