@@ -11,7 +11,6 @@ type PropTypes = {
 type CacheAnimation = () => void;
 type MemoizeAnimationStateValue = (key: keyof AnimationStates) => void;
 
-
 function withAnimation(Component: React.ElementType) {
     return function WithAnimation(props: PropTypes) {
         const location = useLocation()
