@@ -396,7 +396,7 @@ const footerData = {
     link: 'https://github.com/kitaiv/portfolio'
   },
   footerText: {
-    text_1: 'Design and built fully by me',
+    text_1: 'Designed and built fully by me',
     text_2: '®All rights reserved @' + currentYear
   }
 }
