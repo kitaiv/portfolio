@@ -16,7 +16,7 @@ const HomeComponent = () => {
     const context = useContext(Context);
 
     // @ts-expect-error
-    const {animationPlayed} = context
+    const { animationPlayed } = context
 
     const isAnimated = animationPlayed.homeAnimation
 
@@ -26,12 +26,8 @@ const HomeComponent = () => {
     });
 
     useLayoutEffect(() => {
-        if (inView) {
-            ctrls.start("visible");
-        }
-        if (!inView) {
-            ctrls.start("hidden");
-        }
+        if (inView) ctrls.start("visible");
+        if (!inView) ctrls.start("hidden");
 
     }, [ctrls, inView]);
 
@@ -65,7 +61,7 @@ const HomeComponent = () => {
         <Flex direction={breakpoint === 'base' && 'sm' ? 'column' : 'row'} gap={10} >
             <Box>
                 <Center>
-                    <Image src={PicOfMe} alt="pic of me" w={breakpoint === 'base' && 'sm' ? '300px' : '100%'}/>
+                    <Image src={PicOfMe} alt="pic of me" w={breakpoint === 'base' && 'sm' ? '300px' : '100%'} />
                 </Center>
             </Box>
             <Box w='100%'>
@@ -100,9 +96,9 @@ const HomeComponent = () => {
                     })}
                     <Image display='inline' mb='-3px' ml='2' src={WavingHandIcon} w='20px' h='20px'></Image>
                 </Text>
-                <Text 
-                    fontSize={breakpoint === 'base' && 'sm' ? 'sm' : 'lg'} 
-                    align={breakpoint === 'base' && 'sm' ? 'center' : 'start'} 
+                <Text
+                    fontSize={breakpoint === 'base' && 'sm' ? 'sm' : 'lg'}
+                    align={breakpoint === 'base' && 'sm' ? 'center' : 'start'}
                     color="gray.50"
                 >
                     {homeData.mainText.split(".").map((word, index) => {
